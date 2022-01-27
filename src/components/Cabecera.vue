@@ -2,7 +2,7 @@
   <v-app-bar app color="white" elevate-on-scroll elevation="4">
     <v-app-bar-nav-icon @click="$emit('cerrarDrawer')"></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
-    <v-col md="6" cols="8">
+    <v-col md="6" cols="4">
       <v-form class="mt-5">
         <v-text-field
           outlined
@@ -117,6 +117,7 @@
 
 <script>
 export default {
+  
   data() {
     return {
       menus:[
@@ -126,7 +127,7 @@ export default {
         {title:"Salir", icon:"mdi-logout"}
       ],
       items: [
-        { header: "Today" },
+        { header: "Notificaciones 27/01/2022" },
         {
           avatar: "https://cdn.vuetifyjs.com/images/lists/1.jpg",
           title: "Brunch this weekend?",

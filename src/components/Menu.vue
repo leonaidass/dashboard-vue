@@ -3,15 +3,16 @@
       v-model="drawer"
       app
     >
-      <v-img src="https://images.pexels.com/photos/169573/pexels-photo-169573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="pa-4">
-      <div class="text-center mt-4">
-          <v-avatar class="mb-4" color="grey darken-1" size="80">
+    <div>
+      <v-img src="../assets/logo2.png">
+      <!-- <div class="text-center mt-4"> -->
+          <!-- <v-avatar class="mb-4" color="grey darken-1" size="80">
              <v-img aspect-ratio="30" src="https://cdn.vuetifyjs.com/images/lists/5.jpg"  ></v-img>
-          </v-avatar>
-          <h2 class="white--text">Administrador</h2>
-      </div>
+          </v-avatar> -->
+          <!-- <h2 >Administrador</h2> -->
+      <!-- </div> -->
       </v-img>
-      
+      </div>
       
 
       <v-divider></v-divider>
@@ -46,6 +47,11 @@
         ['mdi-account-group', 'Personal'],
         ['mdi-file-document-edit', 'Legajos'],
         ['mdi-text-box-search', 'Indice'],
+        ['mdi-ballot', 'Salario'],
+        ['mdi-file-account', 'Acc. de Trabajo'],
+        ['mdi-clipboard-multiple', 'Calificaciones'],
+        ['mdi-calendar-text', 'Prevision'],
+        ['mdi-cards-playing-heart-multiple', 'A. Fisico'],
       ],
             }
         },

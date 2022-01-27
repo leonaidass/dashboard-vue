@@ -51,9 +51,9 @@
           <v-row class="pt-1">
             
             <v-col>
-              <strong>New Icon</strong>
+              <strong>Inf-Sumaria 218/2022</strong>
               <div class="text-caption">
-                Mobile App
+                Inicio 10/05/2020
               </div>
             </v-col>
           </v-row>
@@ -73,7 +73,7 @@
           <v-row class="pt-1">
             
             <v-col>
-              <strong>Lunch break</strong>
+              <strong>En Proceso</strong>
             </v-col>
           </v-row>
         </v-timeline-item>
@@ -85,15 +85,34 @@
           <v-row class="pt-1">
             
             <v-col>
-              <strong>Finish Home Screen</strong>
+              <strong>Finalizado</strong>
               <div class="text-caption">
-                Web App
+                Fecha 20/05/2020
               </div>
             </v-col>
           </v-row>
         </v-timeline-item>
       </v-timeline>
        </v-card>
+     </v-col>
+   </v-row>
+   <v-row>
+     <v-col lg-12>
+       
+  <v-data-table
+     caption="Indice de Personal"
+    :headers="headers"
+    :items="desserts"
+    :items-per-page="5"
+    class="elevation-1"
+  >
+  <template v-slot:[`item.acciones`]>
+   <v-btn color="success">Ver mas</v-btn>
+  </template>
+  
+  </v-data-table>
+
+
      </v-col>
    </v-row>
   </div>
@@ -106,8 +125,66 @@
         datos:[
           {titulo:'Personal Policial en Actividad', subtitulo:'Año 2022', color:'primary',total:'4577'},
           {titulo:'Personal Policial Situacion Especial', subtitulo:'Carpeta Medica', color:'red',total:'152'},
-          {titulo:'Personal Policial Licencia', subtitulo:'Liencias Especiales y Anuales', color:'warning',total:'371'}
-        ]
+          {titulo:'Personal Policial Licencia', subtitulo:'Liencias Especiales y Anuales', color:'warning',total:'143'},
+          {titulo:'Personal Policial Situacion Especial', subtitulo:'Retiro', color:'warning',total:'371'}
+        ],
+        headers: [
+          { text: 'N°', value: 'numero' },
+          { text: 'Cuerpo', value: 'cuerpo' },
+          { text: 'D.N.I', value: 'dni' },
+          { text: 'Jerarquia', value: 'jerarquia' },
+          { text: 'Nombre y Apellido', value: 'nombre' },
+          { text: 'Destino', value: 'destino' },
+          { text: 'Arma', value: 'arma' },
+          { text: 'Acciones', value: 'acciones' },
+        ],
+        desserts: [
+          {
+            numero:'1',
+            cuerpo: 'C.S.E.G',
+            dni: '38.216.729',
+            jerarquia: "Of Ayte",
+            nombre: "Perez Dario",
+            destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
+            arma: 'Posee',
+          },
+           {
+            numero:'2',
+            cuerpo: 'C.S.E.G',
+            dni: '29.857.215',
+            jerarquia: "Of Ayte",
+            nombre: "Ramos Rodrigo",
+            destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
+            arma: 'Posee',
+          },
+           {
+            numero:'3',
+            cuerpo: 'C.S.E.G',
+            dni: '35.507.410',
+            jerarquia: "Cabo",
+            nombre: "Esquivel Leonardo",
+            destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
+            arma: 'Posee',
+          },
+           {
+            numero:'4',
+            cuerpo: 'C.S.E.G',
+            dni: '36.745.894',
+            jerarquia: "Agte",
+            nombre: "Guzman Eduardo",
+            destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
+            arma: 'Posee',
+          },
+           {
+            numero:'5',
+            cuerpo: 'C.S.E.G',
+            dni: '39.887.325',
+            jerarquia: "Agte",
+            nombre: "Ovalles Michel",
+            destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
+            arma: 'Posee',
+          }
+         ]
       }
     },
   }
