@@ -126,7 +126,7 @@
           {titulo:'Personal Policial en Actividad', subtitulo:'Año 2022', color:'primary',total:'4577'},
           {titulo:'Personal Policial Situacion Especial', subtitulo:'Carpeta Medica', color:'red',total:'152'},
           {titulo:'Personal Policial Licencia', subtitulo:'Liencias Especiales y Anuales', color:'warning',total:'143'},
-          {titulo:'Personal Policial Situacion Especial', subtitulo:'Retiro', color:'warning',total:'371'}
+          {titulo:'Personal Policial Situacion Especial', subtitulo:'Retiro', color:'#7986CB',total:'371'}
         ],
         headers: [
           { text: 'N°', value: 'numero' },
