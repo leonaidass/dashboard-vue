@@ -106,6 +106,9 @@
     :items-per-page="5"
     class="elevation-1"
   >
+  <template v-slot:[`item.vacunacion`]>
+   <v-btn color="primary" @click="dialogCovid=true">Covid</v-btn>
+  </template>
   <template v-slot:[`item.acciones`]>
    <v-btn color="success" @click="dialog=true">Ver mas</v-btn>
   </template>
@@ -124,6 +127,7 @@
     class="mx-auto"
     max-width="500"
     outlined
+    
   >
     <v-list-item three-line>
       <v-list-item-content>
@@ -142,7 +146,7 @@
         size="100"
         color="grey"
       ><v-img
-                  src="https://cdn.vuetifyjs.com/images/lists/5.jpg"
+                  src="../assets/dario.jpg"
                 ></v-img></v-list-item-avatar>
     </v-list-item>
   <v-form>
@@ -175,8 +179,8 @@
           sm="6"
         >
           <v-text-field
-            v-model="credencial"
-            label="N° Arma"
+            v-model="categoriaP"
+            label="Categoria Profesional"
             filled
           ></v-text-field>
         </v-col>
@@ -185,8 +189,8 @@
           sm="6"
         >
           <v-text-field
-            v-model="credencial"
-            label="N° Arma"
+            v-model="fIngreso"
+            label="Fecha Ingreso"
             filled
           ></v-text-field>
         </v-col>
@@ -195,7 +199,7 @@
           sm="12"
         >
           <v-text-field
-            v-model="credencial"
+            v-model="domicilio"
             label="Domicilio"
             filled
           ></v-text-field>
@@ -205,8 +209,8 @@
           sm="6"
         >
           <v-text-field
-            v-model="credencial"
-            label="Last Name"
+            v-model="antGral"
+            label="Ant Genenral"
             filled
           ></v-text-field>
         </v-col>
@@ -215,8 +219,8 @@
           sm="6"
         >
           <v-text-field
-            v-model="credencial"
-            label="Last Name"
+            v-model="antGrado"
+            label="ant. Grado"
             filled
           ></v-text-field>
         </v-col>
@@ -226,16 +230,58 @@
 
 
     <v-card-actions>
+      <v-spacer></v-spacer>
       <v-btn
-        outlined
-        rounded
-        text
+        color="green"
+       class="white--text"
+       rounded
+        
         @click="dialog=false"
+        
       >
         Cerrar
       </v-btn>
     </v-card-actions>
   </v-card>
+     
+    </v-dialog>
+    <v-dialog
+      v-model="dialogCovid"
+      width="700"
+    >
+      <v-card outlined class="mx-auto"
+    max-width="700"
+    >
+    <v-card-title>Vacuna Covid 19</v-card-title>
+    <v-container>
+          <v-timeline
+    align-top
+    :dense="$vuetify.breakpoint.smAndDown"
+  >
+    <v-timeline-item
+      v-for="(item, i) in itemsCovid"
+      :key="i"
+      :color="item.color"
+      :icon="item.icon"
+      fill-dot
+    >
+      <v-card
+        :color="item.color"
+        dark
+      >
+        <v-card-title class="text-h6">
+          {{item.dosis}}
+        </v-card-title>
+        <v-card-text class="white text--primary">
+          <p>{{item.fecha}} <br> {{item.vacuna}}</p>
+          
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
+    </v-container>
+      </v-card>
+   
      
     </v-dialog>
   </div>
@@ -247,8 +293,16 @@
     data() {
       return {
         dialog: false,
+        dialogCovid:false,
         credencial:8084,
         padron:"405187-7",
+        arma:"10750px",
+        domicilio:"Av Rioja 1515 Sur Capital",
+        antGrado:"5 años y tres Meses",
+        antGral:"7 años y Ocho meses",
+        fIngreso:"20/08/2015",
+        categoriaP:"A3 B1 B2 B3 D1",
+        
         datos:[
           {titulo:'Personal Policial en Actividad', subtitulo:'Año 2022', color:'primary',total:'4577'},
           {titulo:'Personal Policial Situacion Especial', subtitulo:'Carpeta Medica', color:'red',total:'152'},
@@ -263,6 +317,7 @@
           { text: 'Nombre y Apellido', value: 'nombre' },
           { text: 'Destino', value: 'destino' },
           { text: 'Arma', value: 'arma' },
+          { text: 'Vacunacion', value: 'vacunacion' },
           { text: 'Acciones', value: 'acciones' },
         ],
         desserts: [
@@ -311,7 +366,31 @@
             destino: "Dirección de Telecomunicaciones y Emergencias Policiales D-8 ",
             arma: 'Posee',
           }
-         ]
+         ],
+         itemsCovid: [
+        {
+          color: '#607D8B',
+          icon: 'mdi-star',
+          fecha:"15/04/2021",
+          vacuna:"Sputnik",
+          dosis:"Primer  Dosis"
+        },
+        {
+          color: '#2962FF',
+          icon: 'mdi-book-variant',
+          fecha:"20/11/2021",
+          vacuna:"Pfizer",
+          dosis:"Segunda Dosis"
+        },
+        {
+          color: '#00BFA5',
+          icon: 'mdi-airballoon',
+          fecha:"15/01/2022",
+          vacuna:"Astrazeneca",
+          dosis:"Tercer Dosis"
+        },
+       
+      ],
       }
     },
   }
