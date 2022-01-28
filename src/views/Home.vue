@@ -107,7 +107,7 @@
     class="elevation-1"
   >
   <template v-slot:[`item.acciones`]>
-   <v-btn color="success">Ver mas</v-btn>
+   <v-btn color="success" @click="dialog=true">Ver mas</v-btn>
   </template>
   
   </v-data-table>
@@ -115,13 +115,140 @@
 
      </v-col>
    </v-row>
+    <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      
+   <v-card
+    class="mx-auto"
+    max-width="500"
+    outlined
+  >
+    <v-list-item three-line>
+      <v-list-item-content>
+        <div class="text-overline mb-4">
+          Ficha Personal
+        </div>
+        <v-list-item-title class="text-h5 mb-1">
+          Of Ayte Perez Dario
+        </v-list-item-title>
+        <v-list-item-subtitle>Dirección de Telecomunicaciones y Emergencias Policiales D-8</v-list-item-subtitle>
+        
+      </v-list-item-content>
+
+      <v-list-item-avatar
+        tile
+        size="100"
+        color="grey"
+      ><v-img
+                  src="https://cdn.vuetifyjs.com/images/lists/5.jpg"
+                ></v-img></v-list-item-avatar>
+    </v-list-item>
+  <v-form>
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="padron"
+            label="Padron"
+            filled
+            
+          ></v-text-field>
+        </v-col>
+
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="Credencial"
+            filled
+          ></v-text-field>
+        </v-col>
+         <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="N° Arma"
+            filled
+          ></v-text-field>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="N° Arma"
+            filled
+          ></v-text-field>
+        </v-col>
+         <v-col
+          cols="12"
+          sm="12"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="Domicilio"
+            filled
+          ></v-text-field>
+        </v-col>
+         <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="Last Name"
+            filled
+          ></v-text-field>
+        </v-col>
+         <v-col
+          cols="12"
+          sm="6"
+        >
+          <v-text-field
+            v-model="credencial"
+            label="Last Name"
+            filled
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
+
+
+    <v-card-actions>
+      <v-btn
+        outlined
+        rounded
+        text
+        @click="dialog=false"
+      >
+        Cerrar
+      </v-btn>
+    </v-card-actions>
+  </v-card>
+     
+    </v-dialog>
   </div>
+  
 </template>
 
 <script>
   export default {
     data() {
       return {
+        dialog: false,
+        credencial:8084,
+        padron:"405187-7",
         datos:[
           {titulo:'Personal Policial en Actividad', subtitulo:'Año 2022', color:'primary',total:'4577'},
           {titulo:'Personal Policial Situacion Especial', subtitulo:'Carpeta Medica', color:'red',total:'152'},
