@@ -108,6 +108,19 @@
 
         
         </v-list-item> 
+        <v-list-item link @click="logout">
+          
+             <v-list-item-icon>
+               <v-icon>mdi-logout</v-icon>
+             </v-list-item-icon>
+
+             <v-list-item-content>
+                <v-list-item-title>Salir</v-list-item-title>
+             </v-list-item-content>
+             
+
+        
+        </v-list-item> 
           
         
        </v-list>
@@ -124,7 +137,7 @@ export default {
         {title:"Perfil", icon:"mdi-account"},
         {title:"Editar Contraseña", icon:"mdi-key"},
         {title:"Ajustes", icon:"mdi-cog"},
-        {title:"Salir", icon:"mdi-logout"}
+        
       ],
       items: [
         { header: "Notificaciones 27/01/2022" },
@@ -163,6 +176,11 @@ export default {
       ],
     };
   },
+  methods:{
+    logout(){
+       this.$store.dispatch("logout");
+    }
+  }
 };
 </script>
 
